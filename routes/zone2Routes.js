@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const Session = require('../models/Session');
+const Session = require('../models/zone2');
 
 // Fetch all entries
 router.get('/sessions', async (req, res) => {

@@ -4,7 +4,8 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const userRoutes = require('./routes/UsersRoutes'); 
 const coverageRoutes = require('./routes/CouverageRoutes'); 
-
+const zone2Routes = require('./routes/zone2Routes'); 
+const zone3Routes = require('./routes/zone3Routes'); 
 
 const app = express();
 app.use(cors());
@@ -18,7 +19,8 @@ mongoose.connect('mongodb://localhost:27017/formData', {
 
 
 app.use('/api/users', userRoutes);
-app.use('/api/coverage', coverageRoutes);
-
+app.use('/api/zone1', coverageRoutes);
+app.use('/api/zone2', zone2Routes);
+app.use('/api/zone3', zone3Routes);
 const PORT = 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
